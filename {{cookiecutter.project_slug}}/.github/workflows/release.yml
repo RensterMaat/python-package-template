@@ -17,7 +17,7 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
-                  token: ${{ secrets.GITHUB_TOKEN }}
+                  token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
 
             - name: Set up Python
               uses: actions/setup-python@v5
@@ -35,17 +35,17 @@ jobs:
               id: release
               uses: python-semantic-release/python-semantic-release@v9.14.0
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
 
             - name: Publish package distributions to PyPI
               uses: pypa/gh-action-pypi-publish@release/v1
               if: steps.release.outputs.released == 'true'
               with:
-                  password: ${{ secrets.PYPI_API_TOKEN }}
+                  password: {% raw %}${{ secrets.PYPI_API_TOKEN }}{% endraw %}
 
             - name: Publish package distributions to GitHub Releases
               uses: python-semantic-release/publish-action@v9.14.0
               if: steps.release.outputs.released == 'true'
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  tag: ${{ steps.release.outputs.tag }}
+                  github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+                  tag: {% raw %}${{ steps.release.outputs.tag }}{% endraw %}

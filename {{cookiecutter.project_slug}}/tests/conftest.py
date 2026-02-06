@@ -1,6 +1,4 @@
-"""Configuration for pytest."""
+"""Configuration for pytest.
 
-import matplotlib
-
-# Use non-interactive backend for tests
-matplotlib.use("Agg")
+Add shared fixtures and test configuration here.
+"""

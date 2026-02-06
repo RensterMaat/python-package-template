@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 <!--next-version-placeholder-->
 
-## v{{ cookiecutter.project_version }} ({% now ''local'', ''%Y-%m-%d'' %})
+## v{{ cookiecutter.project_version }} ({% now 'local', '%Y-%m-%d' %})
 
 ### Features
 - Initial release
