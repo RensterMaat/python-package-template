@@ -40,7 +40,7 @@ This cookiecutter template provides a complete Python package structure with:
 ### Create a New Project
 
 ```bash
-cookiecutter https://github.com/{{ cookiecutter.github_username }}/python-package-template
+cookiecutter https://github.com/RensterMaat/python-package-template
 # Or from local:
 cookiecutter /path/to/this/template
 ```
