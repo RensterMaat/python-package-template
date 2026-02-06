@@ -64,7 +64,7 @@ def main() -> None:
     print("📚 Initializing git repository...")
     if run_command(["git", "init"], check=False):
         print("✅ Git repository initialized")
-        
+
         # Make initial commit
         print("📝 Creating initial commit...")
         run_command(["git", "add", "."], check=False)
@@ -87,7 +87,9 @@ def main() -> None:
     print("   1. Review the generated files")
     print("   2. Update README.md with your project details")
     print("   3. Create a GitHub repository:")
-    print("      git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git")
+    print(
+        "      git remote add origin git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git"
+    )
     print("      git push -u origin main")
     print()
     print("   4. Configure GitHub secrets for CI/CD:")
